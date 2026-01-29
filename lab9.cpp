@@ -66,3 +66,18 @@ auto groupStats(T* arr, int n, KeyFunc keyFunc, ValueFunc valueFunc)
 
     return groups;
 }
+
+// вывод групп в формате: key, count, minElem, maxElem, sum, avg 
+template <typename KeyType, typename ElemType>
+void printGroups(const std::vector<GroupInfo<KeyType, ElemType>>& groups)
+{
+    std::cout << "key, count, minElem, maxElem, sum, avg\n";
+    for (const auto& g : groups) {
+        std::cout << g.key << ", "
+                  << g.count << ", "
+                  << g.minElem << ", "
+                  << g.maxElem << ", "
+                  << g.sum << ", "
+                  << g.avg << "\n";
+    }
+}
